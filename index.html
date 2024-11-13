@@ -71,14 +71,14 @@
             "Rzeka Warta",
             "Rzeka San",
             "Rzeka Bug",
-            "Rzeka Dunajec",
+            "Rzeka Dunajec"
         ];
 
         const getRandomObiekty = () => {
             const ile = parseInt(document.getElementById("ile").value);
             document.querySelector("p").textContent = (isNaN(ile) || ile <= 0) 
                 ? "Podaj ile przykładów ma się wypisać!" 
-                : [...new Set(Array.from({ length: ile + 1 }, () => obiekty[Math.floor(Math.random() * obiekty.length)]))].join(", ");
+                : [...new Set(Array.from({ length: ile }, () => obiekty[Math.floor(Math.random() * obiekty.length)]))].join(", ");
         };
     </script>
 </body>
