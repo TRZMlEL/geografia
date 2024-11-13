@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografia</title>
+</head>
+<body>
+    <form>
+        <input type="number" id="ile" placeholder="ile">
+        <button type="button" onclick="getRandomObiekty()">Losuj</button>
+    </form>
+    <p></p>
+    <script>
+        var obiekty = [
+            "Wszystkie skraje punkty",
+            "Granice naturalne",
+            "Granice sztuczne",
+            "Pobrzerze koszalińskie",
+            "Jezioro Żarnowieckie",
+            "Wyspa Wolin",
+            "Warmia",
+            "Jezioro Łebsko",
+            "Jezioro Gardno",
+            "Jezioro Wigry",
+            "Jezioro Gopło",
+            "Jezioro Śniardwy",
+            "Jezioro Drużno",
+            "Jezioro Niegocin",
+            "Zalew szczeciński",
+            "Zatoka pucka",
+            "Wszystkie miasta wojewódzkie",
+            "Pojezierze drawskie",
+            "Pojezierze kaszubskie",
+            "Bory tucholskie",
+            "Pojezierze iławskie",
+            "Pojezierze myśliborskie",
+            "Pojezierze suwalskie",
+            "Pojezierze mazurskie",
+            "Żuławy wiślane",
+            "Kotlina warszawska",
+            "Kotlina kłocka",
+            "Kotlina sandomierska",
+            "Kotlina sandomierska",
+            "Kotlina oświęmcimska",
+            "Szeskie wzgórza",
+            "Wzgórza ostrzeszowskie",
+            "Wzgóze trzebnickie",
+            "Wzgórze dalkowskie",
+            "Nizina śląska",
+            "Nizina mazowiecka",
+            "Nizina wielkopolska",
+            "Wyżyna lubelska",
+            "Roztocze",
+            "Wyżyna małopolska",
+            "Wyżyna śląska",
+            "Wyżyna krakowsko-częstochowska",
+            "Tatry",
+            "Pieniny",
+            "Podhale",
+            "Bieszczady",
+            "Góry świętokrzyskie",
+            "Łysogóry",
+            "Sudety",
+            "Karkonosze",
+            "Góry stołowe",
+            "Góry izerskie",
+            "Góry kaczawskie",
+            "Rzeka Wisła",
+            "Rzeka Odra",
+            "Rzeka Warta",
+            "Rzeka San",
+            "Rzeka Bug",
+            "Rzeka Dunajec",
+        ];
+
+        const getRandomObiekty = () => {
+            const ile = parseInt(document.getElementById("ile").value);
+            document.querySelector("p").textContent = (isNaN(ile) || ile <= 0) 
+                ? "Podaj ile przykładów ma się wypisać!" 
+                : [...new Set(Array.from({ length: ile }, () => obiekty[Math.floor(Math.random() * obiekty.length)]))].join(", ");
+        };
+    </script>
+</body>
+</html>
